@@ -8,7 +8,7 @@
   position: absolute;
   top: 40%;
   left: 45%;
-  animation: loader 1s ease infinite;
+  animation: loader 1.5s ease infinite;
 }
 
 .loader__circle {
@@ -16,7 +16,7 @@
   height: 100px;
   border: 10px solid #4EA8DE;
   border-radius: 50px;
-  animation: loader 2s ease infinite;
+  animation: loader 1.5s ease infinite;
 }
 
 .loader__powder {
@@ -25,6 +25,11 @@
   background: #1A1A1A;
   position: absolute;
   top: 35px;
+}
+
+.error {
+  border-color: #c03f3f;
+  animation: error 1.5s ease infinite;
 }
 
 @keyframes loader {
@@ -37,6 +42,17 @@
   }
   100% {
     border-color: #4EA8DE;
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes error {
+  0% {
+    border-color: #d41212;
+    transform: rotate(0deg);
+  }
+  100% {
+    border-color: #d41212;
     transform: rotate(360deg);
   }
 }

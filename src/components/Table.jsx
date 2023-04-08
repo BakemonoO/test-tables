@@ -15,6 +15,8 @@ function Table() {
 
   const keys = useSelector(state => state.tables.keys)
 
+  const err = useSelector(state => state.tables.requestError)
+
   const dispatch = useDispatch()
 
   const onDragEnd = (result) => {
@@ -65,6 +67,13 @@ function Table() {
     </table>
       : <Loader/>
       }
+      { err 
+      ? <div className={cls.error}>
+      <h1>Прозошли ошибка запроса...</h1>
+      <p>Попробуйте обновить страницу или зайти позже...</p>
+    </div>
+      : false}
+      
 </div>
 )}
 

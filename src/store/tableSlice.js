@@ -6,7 +6,6 @@ import { getFilterFromKeys, getPaginationData } from "../helper";
 // ----------- Initial token
 const token = 'sk_689f0b9287b64b5fbdd2a9dbe88226ca'
 
-
 export const fetchTables = createAsyncThunk(
   'tables/fetchTables', async () => {
     const response = await axios.get('https://cloud.iexapis.com/stable/stock/aapl/dividends/5y', {
@@ -72,7 +71,9 @@ const tableSlice = createSlice({
     })
 
     .addCase(fetchTables.rejected, (state, actions) => {
+      state.loader = false
       state.requestError = true
+      console.log(actions.error)
     })
   }
 });
