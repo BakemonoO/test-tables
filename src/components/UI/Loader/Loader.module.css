@@ -1,0 +1,42 @@
+.loader {
+  margin-top: 120px;
+  width: 100px;
+  height: 100px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  top: 40%;
+  left: 45%;
+  animation: loader 1s ease infinite;
+}
+
+.loader__circle {
+  width: 100px;
+  height: 100px;
+  border: 10px solid #4EA8DE;
+  border-radius: 50px;
+  animation: loader 2s ease infinite;
+}
+
+.loader__powder {
+  width: 120px;
+  height: 30px;
+  background: #1A1A1A;
+  position: absolute;
+  top: 35px;
+}
+
+@keyframes loader {
+  0% {
+    border-color: #4EA8DE;
+    transform: rotate(0deg);
+  }
+  50% {
+    border-color: #5E60CE; 
+  }
+  100% {
+    border-color: #4EA8DE;
+    transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,71 @@
+.table {
+	height: fit-content;
+	width: 100%;
+	border: none;
+	margin-bottom: 20px;
+	border-collapse: collapse;
+	border-spacing: 0;
+	margin-top: 100px;
+	position: relative;
+}
+.table thead th {
+	height: 60px;
+	font-weight: bold;
+	text-align: center;
+	border: none;
+	padding: 10px 15px;
+	background: #5E60CE;
+	font-size: 14px;
+	color: white;
+}
+
+.table thead tr th:first-child {
+	border-radius: 20px 0 0 0;
+}
+.table thead tr th:last-child {
+	border-radius: 0 20px 0 0;
+}
+.table tbody td {
+	height: 53px;
+	text-align: left;
+	border: none;
+	padding: 10px 15px;
+	font-size: 14px;
+	vertical-align: center;
+	color: white;
+	text-align: center;
+}
+.table tbody tr:nth-child(even) {
+	background: #65a1c7;
+}
+
+.table tbody tr:nth-child(odd) {
+	background: #1A1A1A;
+}
+
+.table tbody tr:last-child td:first-child {
+	border-radius: 0 0 0 20px;
+}
+.table tbody tr:last-child td:last-child {
+	border-radius: 0 0 20px 0;
+}
+
+tr:active {
+	width: inherit;
+	height: inherit;
+}
+
+tr:active td {
+	width: inherit;
+}
+
+.table__adaptive {
+	width: 90%;
+	display: flex;
+}
+
+@media (max-width: 1700px) {
+	.table__adaptive {
+		overflow-x: auto;
+	}
+}
