@@ -1,10 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 import { getFilterFromKeys, getPaginationData } from "../helper";
-
-
-// ----------- Initialize your token
-const token = 'sk_689f0b9287b64b5fbdd2a9dbe88226ca'
+import { token } from "../API/Token";
 
 // https://cloud.iexapis.com/stable/stock/msft/intraday-prices  -- 400 items
 // https://cloud.iexapis.com/stable/stock/aapl/dividends/5y     -- 22  items
