@@ -1,0 +1,22 @@
+.error {
+	display: flex;
+	height: 100px;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	position: absolute;
+	font-style: italic;
+	top: 30%;
+	left: 30%;
+}
+
+.error h1 {
+	color: #5E60CE;
+	font-weight: 900;
+	font-size: 45px;
+}
+
+.error p {
+	color: #4EA8DE;
+	font-size: 20px;
+}

@@ -12,7 +12,7 @@ function PaginationTable() {
   const dispatch = useDispatch()
 
   return (
-    <div className={cls.pagination__table}>
+    <div className={limit <= 1 ? cls.pagination__table + ' ' + cls.none : cls.pagination__table}>
       <div className={page === 1 ? cls.pagination__item + ' ' + cls.hidden : cls.pagination__item}
       onClick={() => dispatch(pageDown())}
       >Prev</div>

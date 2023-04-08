@@ -6,6 +6,9 @@ import { getFilterFromKeys, getPaginationData } from "../helper";
 // ----------- Initial token
 const token = 'sk_689f0b9287b64b5fbdd2a9dbe88226ca'
 
+// https://cloud.iexapis.com/stable/stock/msft/intraday-prices  -- 400 items
+// https://cloud.iexapis.com/stable/stock/aapl/dividends/5y     -- 22  items
+
 export const fetchTables = createAsyncThunk(
   'tables/fetchTables', async () => {
     const response = await axios.get('https://cloud.iexapis.com/stable/stock/aapl/dividends/5y', {

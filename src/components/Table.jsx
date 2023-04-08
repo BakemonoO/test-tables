@@ -5,6 +5,7 @@ import Loader from './UI/Loader/Loader';
 import { useSelector, useDispatch } from 'react-redux';
 import { reorder } from '../helper';
 import { getTable } from '../store/tableSlice';
+import FetchError from './error/FetchError';
 
 
 function Table() {
@@ -68,10 +69,7 @@ function Table() {
       : <Loader/>
       }
       { err 
-      ? <div className={cls.error}>
-      <h1>Прозошли ошибка запроса...</h1>
-      <p>Попробуйте обновить страницу или зайти позже...</p>
-    </div>
+      ? <FetchError/>
       : false}
       
 </div>
