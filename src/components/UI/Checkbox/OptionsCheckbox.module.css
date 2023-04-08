@@ -36,6 +36,11 @@
 .checkbox:checked::before {
   border-color: #c03f3f;
 }
+
+.options__checkbox:hover .checkbox:checked:before{
+  border-color: #b32222;
+}
+
 .checkbox:checked + .checkbox__value {
   text-decoration: 2px line-through;
   

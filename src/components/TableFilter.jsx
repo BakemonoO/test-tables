@@ -22,7 +22,7 @@ function TableFilter() {
       dispatch(getFilteredTable(filterKeys))
       dispatch(changeKeys(filterKeys))
     }
-  }, [filterKeys, page])
+  }, [filterKeys, page, data.length, dispatch])
 
   const addFilter = (item) => {
     if (filterKeys.includes(item)) {
