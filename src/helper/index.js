@@ -26,12 +26,3 @@ export const getPaginationData = (array, limit) => {
   return result;
 }
 
-export const getFilterFromKeys = (array, keys) => {
-  let result = JSON.parse(JSON.stringify(array))
-   result.forEach(x => {
-    for (let i = 0; i < keys.length; i++) {
-      delete x[keys[i]]
-    }
-  })
-  return result
-}

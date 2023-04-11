@@ -50,9 +50,9 @@ function Table() {
               <Draggable key={item.dndId} draggableId={item.dndId} index={index}>
                 {provided => (
                   <tr ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}>
-                    <td>{index + 1}</td>
+                    <td>{index + 1 + (10 * (page - 1))}</td>
                     {Object.entries(item).map(([key, value]) => (
-                      key === 'dndId' 
+                      keys.includes(key) === false || key === 'dndId'
                       ? false
                       : <td key={key}>{value}</td>
                     ))}

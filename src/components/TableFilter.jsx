@@ -3,7 +3,7 @@ import cls from './styles/TableFilter.module.css'
 import OptionsCheckbox from './UI/Checkbox/OptionsCheckbox'
 import { useSelector } from 'react-redux'
 import { useDispatch } from 'react-redux'
-import { changeKeys, getFilteredTable } from '../store/tableSlice'
+import { changeKeys } from '../store/tableSlice'
 
 function TableFilter() {
 
@@ -11,18 +11,17 @@ function TableFilter() {
 
   const dispatch = useDispatch()
 
-  const data = useSelector(state => state.tables.data)
+  const request = useSelector(state => state.tables.requestFulfilled)
 
   const page = useSelector(state => state.tables.page)
 
   const staticKeys = useSelector(state => state.tables.staticKeys)
 
   useEffect(() => {
-    if (data.length > 0) {
-      dispatch(getFilteredTable(filterKeys))
+    if (request) {
       dispatch(changeKeys(filterKeys))
     }
-  }, [filterKeys, page, data.length, dispatch])
+  }, [filterKeys,request, page, dispatch])
 
   const addFilter = (item) => {
     if (filterKeys.includes(item)) {

@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
-import { getFilterFromKeys, getPaginationData } from "../helper";
+import { getPaginationData } from "../helper";
 import { token } from "../API/Token";
 
 // https://cloud.iexapis.com/stable/stock/msft/intraday-prices  -- 400 items
@@ -21,22 +21,18 @@ const tableSlice = createSlice({
   name: 'tables',
   initialState: {
     data: [],
-    staticData: [],
     staticKeys: [],
     keys: [],
     page: 1,
     limitPages: 0,
     requestError: false,
     loader: true,
+    requestFulfilled: false
   },
 
   reducers: {
     getTable(state, actions) {
       state.data[state.page - 1] = actions.payload
-    },
-
-    getFilteredTable(state, actions) {
-      state.data[state.page - 1] = getFilterFromKeys(state.staticData[state.page - 1], actions.payload)
     },
 
     changeKeys(state, actions) {
@@ -65,9 +61,9 @@ const tableSlice = createSlice({
         )) 
       state.keys = Object.keys(actions.payload[0])
       state.data = getPaginationData(actions.payload, state.limitPages)
-      state.staticData = state.data
       state.staticKeys = state.keys
       state.loader = false
+      state.requestFulfilled = true
     })
 
     .addCase(fetchTables.rejected, (state, actions) => {
@@ -79,6 +75,6 @@ const tableSlice = createSlice({
 });
 
 
-export const { getTable, getFilteredTable, pageDown, pageUp, changeKeys } = tableSlice.actions
+export const { getTable, pageDown, pageUp, changeKeys } = tableSlice.actions
 
 export default tableSlice.reducer

@@ -1,6 +1,6 @@
-### Test taks for Cybernetically Ink ###
+# Test taks for Cybernetically Ink #
 
-# Initial your token = path: src/API/Token.js #
+### Initial your token = path: src/API/Token.js ###
 
 * 2 APIs to choose = path: src/store/TableSlice (comment)
 * Table is adapted for array objects response
