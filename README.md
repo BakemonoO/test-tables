@@ -2,7 +2,7 @@
 
 ### Initial your token = path: src/API/Token.js ###
 
-GitHub Pages link: [Test table](bakemonoo.github.io/test-tables/)
+GitHub Pages link: [Test table](https://bakemonoo.github.io/test-tables/)
 
 * 2 APIs to choose = path: src/store/TableSlice (comment)
 * Table is adapted for array objects response
